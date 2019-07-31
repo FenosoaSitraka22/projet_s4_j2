@@ -1,0 +1,3 @@
+CREATE TABLE 'user' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'comment' TEXT, 'name' TEXT, FOREIGN KEY (comment) REFERENCES commentaires (commentaire));
+CREATE TABLE 'liens' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'user_id' INTEGER, 'lien' TEXT, FOREIGN KEY (user_id) REFERENCES user (id));
+CREATE TABLE 'commentaires' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'user_id' INTEGER, 'liens_id' INTEGER, 'commentaire' TEXT, FOREIGN KEY (user_id) REFERENCES user (id), FOREIGN KEY (liens_id) REFERENCES liens (id));
